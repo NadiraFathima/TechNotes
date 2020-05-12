@@ -13,7 +13,7 @@ For example, all this while packages like grunt we were installing it on global 
 This process is a lot to do, mainly in cases when you want to test out a cli tool for once in your application but have to corrupt the global npm space. NPX solves this issue.  For example,
 >'npx lerna bootstrap'.
 
-It first checks if lerna is present in our local npm path(node modules of project) and then the global(appData) npm repo and then the registry to see if it can find lerna cli tool. It gets that tool and executes the command 'lerna bootstrap'. 
+It first checks if lerna is present in our local npm path(./node_modules/.bin of project) and then the global(appData/Roaming/npm) npm repo and then the registry to see if it can find lerna cli tool. It gets that tool and executes the command 'lerna bootstrap'. 
 NPM is also a cli tool and hence 
 >'npx npm install'
 
