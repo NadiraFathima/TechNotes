@@ -4,7 +4,8 @@ my tech notes
 
 # NPM - Package manager -- used to install all packages stored in npm registry as dependencies
 
-# NPX - Package runner -- runs CLI tools and other executables hosted on the registry. 
+# NPX - Package runner -- 
+ > runs CLI tools and other executables hosted on the registry. 
 For example, all this while packages like grunt we were installing it on global level using something like 'npm install -g grunt'. This actually downloads grunt CLI tool in global npm folder, for me it is ../AppData/Roaming/npm,  and then using the command like 'grunt build' to build applications. 'grunt build' works because the global npm path is mentioned in our environmental variables.
 
 This process is a lot to do, mainly in cases when you want to test out a cli tool for once in your application but have to corrupt the global npm space. NPX solves this issue.  For example,
