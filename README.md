@@ -22,7 +22,7 @@ would work fine. If you want to see how one command works with different node mo
 
 also. This way you can see how your commands work for different node versions before bumping up the node version.
 
-###### Angular
+
 # Angular CD cycle steps for a component:
 
 1.Update bindings
