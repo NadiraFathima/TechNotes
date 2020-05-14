@@ -56,3 +56,28 @@ https://medium.com/@codebyamir/a-web-developers-guide-to-browser-caching-cc41f3b
 
 # Schematics
 https://www.youtube.com/watch?v=JAt1FSwhnWk
+https://medium.com/@tomastrajan/total-guide-to-custom-angular-schematics-5c50cf90cdb4
+
+# Yarn and npm difference
+Yarn and NPM are both package managers. Package manager is basically something that deals with the hassle of installing, updating modifying the dependenices etc. Yarn and npm commands that we type on our local machines are npm clients. By this I mean they are client side programs that do all this. However npm is not just this. NPM also has an npm registry where we can get all the packages. Yarn also gets the packages from npm registry. and follows the same structure as npm like taking dependencies from package.json. Yarn has 'yarn.lock' to lock dependency versions whereas npm does 'package-lock.json'. 
+Yarn was designed by facebook to make up for some of npm shortcomings.
+
+https://www.keycdn.com/blog/npm-vs-yarn
+
+# lerna 
+Lerna gives us one command to run multiple projects present as packages under same repository. For example under package.json of each project in the repository, you have a script { "start" : "ng serve" }, then running `lerna run start` from the root folder would run ng serve command in all the projects in the repository. 
+
+`lerna bootstrap` command :
+ helps us with linking the dependencies so that we can easily include them in require() without any issues. For example, if package 1 has a dependency listed in package.json to package2 :
+// packages/pkg-1/package.json
+{
+  name: "pkg-1",
+  version: "1.0.0",
+  dependencies: {
+    "pkg-2": "github:example-user/pkg-2#v1.0.0"
+  }
+}
+
+Organizations usually have different projects in different repositories interacting with each other. To see the interaction on local machine, you might have to start and run all these projects simultaneously. This would mean going to each repository typing start command and running it making it a tedious task.  To solve this problem, many companies follow multi-package repository where each package is its own project. Lerna helps us here in optimizing this workflow of the build.
+https://lerna.js.org/
+https://github.com/lerna/lerna
