@@ -53,3 +53,6 @@ HTTP header: 'Cache-Control' = no-cache follows the behaviour of scenario 1.
 
 For more detailed explanation with pictures, refer :
 https://medium.com/@codebyamir/a-web-developers-guide-to-browser-caching-cc41f3b73e7c
+
+## Schematics
+https://www.youtube.com/watch?v=JAt1FSwhnWk
