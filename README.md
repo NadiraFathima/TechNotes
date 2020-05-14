@@ -41,3 +41,15 @@ If CDStrategy.onpush then in case of any dom event trigger in its child componen
                                       4    5  6   7
 
 If an event is triggered in 4, then CD starts from 1, goes to 2 and reaches 4. This happens even if CD strategy of 2 and 4 is onPush. Here, the CD doesn't go from 1 to 3 if CD strategy of 3 is onPush because 4(where event is triggered) is not in the child tree of 3. Else, it goes. 
+
+# Caching - HTTP Status
+
+Scenario 1 : 304 - Not Modified - This status in the browser means that the response is not actually coming from the server but from browser cache stored on our machine. 
+For example, for static files like js or any other assets, we need not get the data again and again from server as it doesnt usually change. So when the browser first sends a request to the server, the server attaches an eTag(hash of the content) in the response headers. For all the next requests the browser sends to the server requesting for information, the browser puts the eTag value in "If-None-Match" request header. When the server receives this request it checks if the eTag in the request and the eTag it had is the same. If yes, the server doesn't transfer any data and sends back 304 not modified to the browser. On seeing this status code, the browser takes the data from cache. 
+
+Scenario 2 : 200 Cache - In cases, when server initially responds with response headers like 'expires' or 'max-age'(this is given more priority over expires) this check doesnt happen. Instead, the browser directly serves data from cache until data expired.
+
+HTTP header: 'Cache-Control' = no-cache follows the behaviour of scenario 1.
+
+For more detailed explanation with pictures, refer :
+https://medium.com/@codebyamir/a-web-developers-guide-to-browser-caching-cc41f3b73e7c
